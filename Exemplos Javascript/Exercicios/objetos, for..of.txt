@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <div id="app">
+            <input onkeypress="mostraAlerta()" />           
+        </div>
+        <script>
+            function percorreUsers(){
+                var x;    
+                for (x of usuarios) {
+                    console.log('O '+x.nome+' possui as habilidades: '+x.habilidades.join(','));
+                } 
+            }
+            var usuarios = [
+                {
+                    nome: "Diego",
+                    habilidades: ["Javascript", "ReactJS", "Redux"]
+                },
+                {
+                    nome: "Gabriel",
+                    habilidades: ["VueJS", "Ruby on Rails", "Elixir"]    
+                }
+            ];
+
+            percorreUsers();
+        </script>    
+    </body>
+</html>

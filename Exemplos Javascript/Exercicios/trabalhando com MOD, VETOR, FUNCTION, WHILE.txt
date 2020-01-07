@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <div id="app">
+            <input onkeypress="mostraAlerta()" />           
+        </div>
+        <script>
+            function pares(x,y){
+                var num = x;
+                var retorno = [];
+                var pos = 0;
+                while (num >= x && num <= y) {
+                    var par = num % 2 == 0;
+                    if (par == true) {
+                        retorno[pos] = num;            
+                        pos++;
+                    }
+                    num++;
+                }
+                return retorno;    
+            }
+            console.log(pares(10,20));
+        </script>    
+    </body>
+</html>

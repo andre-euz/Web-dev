@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <div id="app">
+            <input onkeypress="mostraAlerta()" />           
+        </div>
+        <script>
+            function temHabilidade(skills){
+                var hab = skills.indexOf("Javascript");
+                if (hab != -1){
+                    return "Possui Javascript";
+                } else {
+                    return "Não possui Javascript";    
+                }                 
+            }
+            var skills = ["Javascript","ReactJS","React Native"];
+            console.log(temHabilidade(skills));
+            
+        </script>    
+    </body>
+</html>
