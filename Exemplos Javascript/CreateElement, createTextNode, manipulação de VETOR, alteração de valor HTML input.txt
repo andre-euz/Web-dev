@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso Javascript</title>
+    </head>
+    <body>        
+        <div id="app">
+            <input type="text" name="nome">
+            <button onClick="adicionar()">Adicionar</button>
+            
+        </div>
+        <script>
+            var nomes = ["Diego","Gabriel","Lucas"];
+            criaListaNomes()
+            
+            function adicionar() {
+                nomeAdd = document.querySelector('input').value;
+                
+                if (nomeAdd == '') {
+                    alert('Informe um Nome!');
+                } else {
+                    nomes.push(nomeAdd);
+                    incrementaLista();  
+                    limpaInput();
+                }
+                
+            }
+            
+            function criaListaNomes() {
+                var divElement = document.querySelector('div#app');
+            
+                var ulElement = document.createElement('ul');
+                ulElement.id = 'lista';
+
+                divElement.appendChild(ulElement);
+                var tamanhoVetor = nomes.length;
+
+                for (i = 0; i < tamanhoVetor; i++){
+                    var liElement = document.createElement('li');
+                    liElement.id = 'linhaLista'+i;
+
+                    ulElement.appendChild(liElement);  
+                    var nomeElement = document.createTextNode(nomes[i]);
+                    liElement.appendChild(nomeElement);
+                    console.log(nomeElement);                  
+                }    
+            }
+            
+            function incrementaLista() {
+                var ulElement = document.querySelector('ul#lista');
+                var liElement = document.createElement('li');
+                var tamanhoVetor = nomes.length-1;
+                liElement.id = 'linhaLista'+tamanhoVetor;
+                ulElement.appendChild(liElement);
+                var nomeElement = document.createTextNode(nomes[tamanhoVetor]);
+                liElement.appendChild(nomeElement);
+            }
+
+            function limpaInput() {
+                document.querySelector('input').value = '';
+            }
+        </script>    
+    </body>
+</html>
