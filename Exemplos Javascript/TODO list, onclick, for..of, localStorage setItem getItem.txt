@@ -1,0 +1,56 @@
+var ulElement = document.querySelector('#app ul');
+var btnElement = document.querySelector('#app button');
+
+var todos = JSON.parse(localStorage.getItem('list_todos')) || [];
+
+renderTodo();
+
+btnElement.onclick = addTodo;    
+
+function addTodo() {
+    var nomeAdd = document.querySelector('#app input');
+    
+    if (nomeAdd.value == '') {
+        alert('Informe um Nome!');
+    } else {
+        todos.push(nomeAdd.value);
+        renderTodo(); 
+        nomeAdd.value = '';     
+        saveToStorage(); 
+    }
+    
+    
+}
+function renderTodo() {
+    ulElement.innerHTML = '';
+
+    for (todo of todos){
+        var posArray = todos.indexOf(todo);
+        
+        var liElement = document.createElement('li');
+        liElement.id = 'linhaLista'+posArray;
+        ulElement.appendChild(liElement);  
+        
+        var nomeElement = document.createTextNode(todo);
+        liElement.appendChild(nomeElement);
+        console.log(nomeElement); 
+        
+        var aElement = document.createElement('a');   
+        aElement.href = '#'; 
+        aElement.setAttribute('onclick','delTodo('+posArray+')')
+        
+        var textElement = document.createTextNode('Excluir');
+        aElement.appendChild(textElement);    
+        liElement.appendChild(aElement);         
+    }    
+}
+
+function delTodo(pos) {
+    todos.splice(pos,1);
+    renderTodo();   
+    saveToStorage(); 
+}
+
+function saveToStorage(){
+    localStorage.setItem('list_todos', JSON.stringify(todos));
+}
