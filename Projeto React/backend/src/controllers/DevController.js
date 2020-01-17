@@ -40,7 +40,7 @@ module.exports = {
     },
 
     async update(request, response) {
-        const {github_username,techs, name,avatar_url,bio,latitude,longitude} = request.body;
+        const {github_username,techs, name, avatar_url, bio, latitude, longitude} = request.body;
 
         let dev = await Dev.findOne({github_username});
 
