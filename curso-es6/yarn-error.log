@@ -1,30 +1,25 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @babel/pollyfill -D
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js dev
 
 PATH: 
-  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\OracleClient\product\12.1.0\client_1;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Users\andre.euzebio\AppData\Local\Microsoft\WindowsApps;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Users\andre.euzebio\AppData\Roaming\npm;C:\Users\andre.euzebio\AppData\Local\Yarn\bin;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\andre.euzebio\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files (x86)\Yarn.bin;
+  C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\WINDOWS\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\cmd;C:\Program Files (x86)\Yarn\bin\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Users\T-Gamer\AppData\Local\Microsoft\WindowsApps;C:\Users\T-Gamer\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\T-Gamer\AppData\Local\Yarn\bin;C:\Users\T-Gamer\AppData\Roaming\npm
 
 Yarn version: 
-  1.21.1
+  1.22.0
 
 Node version: 
-  12.14.1
+  13.8.0
 
 Platform: 
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@babel%2fpollyfill: Not found
-      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66056:18)
-      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140665:22)
-      at Request.emit (events.js:223:5)
-      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141637:10)
-      at Request.emit (events.js:223:5)
-      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141559:12)
-      at Object.onceWrapper (events.js:312:28)
-      at IncomingMessage.emit (events.js:228:7)
-      at endReadableNT (_stream_readable.js:1185:12)
-      at processTicksAndRejections (internal/process/task_queues.js:81:21)
+  SyntaxError: C:\users\t-gamer\documents\andré\development\web-dev\curso-es6\package.json: Unexpected token } in JSON at position 554
+      at JSON.parse (<anonymous>)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Program Files (x86)\Yarn\lib\cli.js:310:30)
+      at C:\Program Files (x86)\Yarn\lib\cli.js:321:13
 
 npm manifest: 
   {
@@ -33,8 +28,8 @@ npm manifest:
     "main": "index.js",
     "license": "MIT",
     "devDependencies": {
-      "@babel/cli": "^7.8.3",
-      "@babel/core": "^7.8.3",
+      "@babel/cli": "^7.8.4",
+      "@babel/core": "^7.8.4",
       "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
       "@babel/plugin-transform-async-to-generator": "^7.8.3",
       "@babel/polyfill": "^7.8.3",
@@ -45,8 +40,11 @@ npm manifest:
       "webpack-dev-server": "^3.10.1"
     },
     "scripts": {
-      "dev": "webpack-dev-server --mode=development",
-      "build": "webpack --mode=production"
+      "dev": "babel -w src/main.js -o ./bundle.js",    
+    },
+    "dependencies": {
+      "@babel/preset-stage-3": "^7.8.3",
+      "axios": "^0.19.2"
     }
   }
 
@@ -58,10 +56,10 @@ Lockfile:
   # yarn lockfile v1
   
   
-  "@babel/cli@^7.8.3":
-    version "7.8.3"
-    resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.8.3.tgz#121beb7c273e0521eb2feeb3883a2b7435d12328"
-    integrity sha512-K2UXPZCKMv7KwWy9Bl4sa6+jTNP7JyDiHKzoOiUUygaEDbC60vaargZDnO9oFMvlq8pIKOOyUUgeMYrsaN9djA==
+  "@babel/cli@^7.8.4":
+    version "7.8.4"
+    resolved "https://registry.yarnpkg.com/@babel/cli/-/cli-7.8.4.tgz#505fb053721a98777b2b175323ea4f090b7d3c1c"
+    integrity sha512-XXLgAm6LBbaNxaGhMAznXXaxtCWfuv6PIDJ9Alsy9JYTOh+j2jJz+L/162kkfU1j/pTSxK1xGmlwI4pdIMkoag==
     dependencies:
       commander "^4.0.1"
       convert-source-map "^1.1.0"
@@ -90,17 +88,17 @@ Lockfile:
       invariant "^2.2.4"
       semver "^5.5.0"
   
-  "@babel/core@^7.8.3":
-    version "7.8.3"
-    resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.8.3.tgz#30b0ebb4dd1585de6923a0b4d179e0b9f5d82941"
-    integrity sha512-4XFkf8AwyrEG7Ziu3L2L0Cv+WyY47Tcsp70JFmpftbAA1K7YL/sgE9jh9HyNj08Y/U50ItUchpN0w6HxAoX1rA==
+  "@babel/core@^7.8.4":
+    version "7.8.4"
+    resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.8.4.tgz#d496799e5c12195b3602d0fddd77294e3e38e80e"
+    integrity sha512-0LiLrB2PwrVI+a2/IEskBopDYSd8BCb3rOvH7D5tzoWd696TBEduBvuLVm4Nx6rltrLZqvI3MCalB2K2aVzQjA==
     dependencies:
       "@babel/code-frame" "^7.8.3"
-      "@babel/generator" "^7.8.3"
-      "@babel/helpers" "^7.8.3"
-      "@babel/parser" "^7.8.3"
+      "@babel/generator" "^7.8.4"
+      "@babel/helpers" "^7.8.4"
+      "@babel/parser" "^7.8.4"
       "@babel/template" "^7.8.3"
-      "@babel/traverse" "^7.8.3"
+      "@babel/traverse" "^7.8.4"
       "@babel/types" "^7.8.3"
       convert-source-map "^1.7.0"
       debug "^4.1.0"
@@ -115,6 +113,16 @@ Lockfile:
     version "7.8.3"
     resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.8.3.tgz#0e22c005b0a94c1c74eafe19ef78ce53a4d45c03"
     integrity sha512-WjoPk8hRpDRqqzRpvaR8/gDUPkrnOOeuT2m8cNICJtZH6mwaCo3v0OKMI7Y6SM1pBtyijnLtAL0HDi41pf41ug==
+    dependencies:
+      "@babel/types" "^7.8.3"
+      jsesc "^2.5.1"
+      lodash "^4.17.13"
+      source-map "^0.5.0"
+  
+  "@babel/generator@^7.8.4":
+    version "7.8.4"
+    resolved "https://registry.yarnpkg.com/@babel/generator/-/generator-7.8.4.tgz#35bbc74486956fe4251829f9f6c48330e8d0985e"
+    integrity sha512-PwhclGdRpNAf3IxZb0YVuITPZmmrXz9zf6fH8lT4XbrmfQKr6ryBzhv593P5C6poJRciFCL/eHGW2NuGrgEyxA==
     dependencies:
       "@babel/types" "^7.8.3"
       jsesc "^2.5.1"
@@ -295,13 +303,13 @@ Lockfile:
       "@babel/traverse" "^7.8.3"
       "@babel/types" "^7.8.3"
   
-  "@babel/helpers@^7.8.3":
-    version "7.8.3"
-    resolved "https://registry.yarnpkg.com/@babel/helpers/-/helpers-7.8.3.tgz#382fbb0382ce7c4ce905945ab9641d688336ce85"
-    integrity sha512-LmU3q9Pah/XyZU89QvBgGt+BCsTPoQa+73RxAQh8fb8qkDyIfeQnmgs+hvzhTCKTzqOyk7JTkS3MS1S8Mq5yrQ==
+  "@babel/helpers@^7.8.4":
+    version "7.8.4"
+    resolved "https://registry.yarnpkg.com/@babel/helpers/-/helpers-7.8.4.tgz#754eb3ee727c165e0a240d6c207de7c455f36f73"
+    integrity sha512-VPbe7wcQ4chu4TDQjimHv/5tj73qz88o12EPkO2ValS2QiQS/1F2SsjyIGNnAD0vF/nZS6Cf9i+vW6HIlnaR8w==
     dependencies:
       "@babel/template" "^7.8.3"
-      "@babel/traverse" "^7.8.3"
+      "@babel/traverse" "^7.8.4"
       "@babel/types" "^7.8.3"
   
   "@babel/highlight@^7.8.3":
@@ -317,6 +325,11 @@ Lockfile:
     version "7.8.3"
     resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.8.3.tgz#790874091d2001c9be6ec426c2eed47bc7679081"
     integrity sha512-/V72F4Yp/qmHaTALizEm9Gf2eQHV3QyTL3K0cNfijwnMnb1L+LDlAubb/ZnSdGAVzVSWakujHYs1I26x66sMeQ==
+  
+  "@babel/parser@^7.8.4":
+    version "7.8.4"
+    resolved "https://registry.yarnpkg.com/@babel/parser/-/parser-7.8.4.tgz#d1dbe64691d60358a974295fa53da074dd2ce8e8"
+    integrity sha512-0fKu/QqildpXmPVaRBoXOlyBb3MC+J0A66x97qEfLOMkn3u6nfY5esWogQwi/K0BjASYy4DbnsEWnpNL6qT5Mw==
   
   "@babel/plugin-proposal-async-generator-functions@^7.8.3":
     version "7.8.3"
@@ -755,6 +768,11 @@ Lockfile:
       levenary "^1.1.0"
       semver "^5.5.0"
   
+  "@babel/preset-stage-3@^7.8.3":
+    version "7.8.3"
+    resolved "https://registry.yarnpkg.com/@babel/preset-stage-3/-/preset-stage-3-7.8.3.tgz#cc270af0fdccd427c03dba175ffa53babe60488e"
+    integrity sha512-ll+6+81Gbf+Z+Ee10ygnpSWC0Wwn1qASS3JCZA1/5wnUlErCX1qARvbr8XWkQli85FTJh4Hnh/94JZvOyeuPfg==
+  
   "@babel/template@^7.8.3":
     version "7.8.3"
     resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.8.3.tgz#e02ad04fe262a657809327f578056ca15fd4d1b8"
@@ -774,6 +792,21 @@ Lockfile:
       "@babel/helper-function-name" "^7.8.3"
       "@babel/helper-split-export-declaration" "^7.8.3"
       "@babel/parser" "^7.8.3"
+      "@babel/types" "^7.8.3"
+      debug "^4.1.0"
+      globals "^11.1.0"
+      lodash "^4.17.13"
+  
+  "@babel/traverse@^7.8.4":
+    version "7.8.4"
+    resolved "https://registry.yarnpkg.com/@babel/traverse/-/traverse-7.8.4.tgz#f0845822365f9d5b0e312ed3959d3f827f869e3c"
+    integrity sha512-NGLJPZwnVEyBPLI+bl9y9aSnxMhsKz42so7ApAv9D+b4vAFPpY013FTS9LdKxcABoIYFU52HcYga1pPlx454mg==
+    dependencies:
+      "@babel/code-frame" "^7.8.3"
+      "@babel/generator" "^7.8.4"
+      "@babel/helper-function-name" "^7.8.3"
+      "@babel/helper-split-export-declaration" "^7.8.3"
+      "@babel/parser" "^7.8.4"
       "@babel/types" "^7.8.3"
       debug "^4.1.0"
       globals "^11.1.0"
@@ -1131,6 +1164,13 @@ Lockfile:
     version "2.1.2"
     resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
     integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
+  
+  axios@^0.19.2:
+    version "0.19.2"
+    resolved "https://registry.yarnpkg.com/axios/-/axios-0.19.2.tgz#3ea36c5d8818d0d5f8a8a97a6d36b86cdc00cb27"
+    integrity sha512-fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==
+    dependencies:
+      follow-redirects "1.5.10"
   
   babel-loader@^8.0.6:
     version "8.0.6"
@@ -1720,6 +1760,13 @@ Lockfile:
     dependencies:
       ms "2.0.0"
   
+  debug@=3.1.0:
+    version "3.1.0"
+    resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+    integrity sha512-OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==
+    dependencies:
+      ms "2.0.0"
+  
   debug@^3.0.0, debug@^3.1.1, debug@^3.2.5:
     version "3.2.6"
     resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
@@ -2227,6 +2274,13 @@ Lockfile:
     dependencies:
       inherits "^2.0.3"
       readable-stream "^2.3.6"
+  
+  follow-redirects@1.5.10:
+    version "1.5.10"
+    resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+    integrity sha512-0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==
+    dependencies:
+      debug "=3.1.0"
   
   follow-redirects@^1.0.0:
     version "1.9.0"
